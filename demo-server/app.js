@@ -73,6 +73,8 @@ nspDefault.on('connect', (socket) => {
 nspChat.on('connect', (socket) => {
 	console.log('Joined Namespace: /chat')
 
+    nspChat.emit('test boolean', {trueValue: true, falseValue: false})
+
 	socket.on('disconnect', () => {
 		console.log('Left Namespace: /chat')
 	})

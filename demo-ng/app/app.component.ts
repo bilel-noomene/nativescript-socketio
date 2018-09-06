@@ -18,6 +18,13 @@ export class AppComponent implements OnInit, OnDestroy {
         if (chatNS && !chatNS.connected) {
             chatNS.connect();
         }
+
+        chatNS.on('test boolean', (data) => console.log(data));
+        // JS: {
+        // JS:   "trueValue": true,
+        // JS:   "falseValue": true
+        // JS: }
+
     }
 
     ngOnDestroy() {
